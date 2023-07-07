@@ -61,7 +61,16 @@ if(isset($_POST['save'])) {
 	array_push($page['infos'], l10n('Information data registered in database'));
 }
 
-
+/*
+ * Purge orpheans manualy.
+ */
+if(isset($_POST['purge'])) {
+	unset($_POST['purge']);
+	$makePurgeQuery = "DELETE FROM face_tag_positions
+      WHERE tag_id NOT IN (SELECT id FROM ".TAGS_TABLE.")";
+    pwg_query($makePurgeQuery);
+	array_push($page['infos'], l10n('Purge Done ! '));
+}
 
 /*
  * Add our template to the global template
