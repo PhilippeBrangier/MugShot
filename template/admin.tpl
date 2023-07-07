@@ -108,4 +108,8 @@ jQuery(document).ready(function() {
     		<input type="submit" value="{'Save'|@translate}" name="save" />
     	</p>
     {/if}
+	<p> For those who can't register a trigger in mysql feel free to manualy purge orpherans : </p>
+			    	<p class="formButtons">
+    		<input type="submit" value="{'Purge orphean'|@translate}" name="purge" />
+    	</p>	
 </form>
